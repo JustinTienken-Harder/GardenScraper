@@ -1,0 +1,525 @@
+<html>
+<head>
+<title>JGarden - Gardens</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="The Japanese Garden Database is intended as a repository
+of information on the historical gardens of Japan. It is a non-profit,
+educational web site that seeks to provide information on a selection of 
+outstanding examples of garden art found in Japan while juxtaposing a diversity of media related to them.  This juxtaposition is intended to bring about fresh insight to a body of discourse that can often be mired in romanticized and exoticized notions of Asia and the cultures therein.">
+<meta name="author" content="Japanese Garden Research Network, Inc.">
+<meta name="keywords" content="Japanese gardens,teien,garden,design,asian garden,niwa,Japan,
+arts,culture,landscape architecture,landscape,garden design,asia,japanese">
+<meta name="rating" content="General">
+<meta name="robots" content="ALL">
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="styles/jgarden_style.css">
+
+<script language="JavaScript" type="text/javascript" src="scripts/browser_check.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/client_common.js"></script>
+
+
+<script language="JavaScript" type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.1"></script>
+<script language="JavaScript">
+ var smap = null;
+ var omap = null;
+ var jgLat = 0;
+ var jgLong = 0;
+ var jgName = '';
+ var jgText = '';
+ var displayingNav = false;
+
+  function SetupStreetMap()
+  {
+	smap = new VEMap('stMap');
+	
+	smap.LoadMap(new VELatLong(jgLat, jgLong), 14 , 'r', false);
+	var pinID = 1;
+	var pin = new VEPushpin(
+		pinID,
+		new VELatLong(jgLat, jgLong),
+		null,
+		jgName,
+		jgText
+		);
+	smap.AddPushpin(pin);
+	smap.HideDashboard();
+
+  }
+
+  function SetupOverviewMap()
+  {
+	omap = new VEMap('ovMap');
+
+	omap.LoadMap(new VELatLong(jgLat, jgLong), 7 , 'r', false);
+	var pinID = 1;
+	var pin = new VEPushpin(
+		pinID,
+		new VELatLong(jgLat, jgLong),
+		null,
+		jgName,
+		jgText
+		);
+	omap.AddPushpin(pin);
+	omap.HideDashboard();
+  }
+  
+  function ShowHideNavigation()
+  {
+	if (displayingNav)
+	{
+	   smap.HideDashboard();
+	   omap.HideDashboard();
+	   displayingNav=false;
+	}
+	else
+	{
+	   smap.ShowDashboard();
+	   omap.ShowDashboard();
+	   displayingNav=true;
+	}
+  }
+  
+
+</script>
+
+
+<meta name="ICBM" content="42.288605,-89.063467">
+<meta name="DC.title" content="JGarden.org: Anderson Gardens">
+
+</head>
+
+<body bgcolor="#FFFFFF" LINK="#003366" 
+	ALINK="#666666" VLINK="#003366" MARGINWIDTH="0"
+	MARGINHEIGHT="0" LEFTMARGIN="0" TOPMARGIN="0"
+	style="margin-top:0; margin-left:0" 
+	onLoad="javascript:SetupStreetMap();SetupOverviewMap();init();">
+	
+
+<table border="0" width="100%" cellpadding="8" cellspacing="0">
+<tr>
+	<td align="center" vAlign="top" bgColor="#FFFFFF" width="196">
+		<a href="default.asp"><img src="images/logo_web.gif" border="0" alt="JGarden Logo"></a>
+
+		<br>
+		
+		
+<form name="frmSearch" method="POST" action="search.asp">
+<!-- begin table for 1 pixel border -->
+<table width="180" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+<tr>
+    <td valign="top">
+        <!-- begin inner table -->
+        <table bgcolor="#F4F4DA" width="178" border="0" cellspacing="0" cellpadding="0">
+        
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+		
+        <tr>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+            <td valign="top">
+            
+				<table bgcolor="#999966" cellspacing="0" cellpadding="1" border="0">
+				<tr>
+					<td>
+				    <table bgcolor="#E7E6C1" cellspacing="0" cellpadding="6" border="0">
+				    <tr>
+					    <td NOWRAP align="right" class="boxHeadingTextBold">search</td>
+				    </tr>
+				    </table>
+					</td>
+				</tr>
+				</table>
+				<br>
+				<select name="CAT" size="1">
+						<option value=""> --Entire Site-- </option>
+						<option value="GARDENS"> Gardens </option>
+						<option value="PLANTS"> Plants </option>
+						<option value="REFERENCES"> Bibliography </option>
+						<option value="ARTICLES_JOJG"> JOJG Articles </option>
+						<option value="ARTICLES"> Web Articles </option>
+						<option value="FEATURES"> Features </option>
+						<option value="FEATURES"> Announcements </option>
+						<option value="FORUM"> Forum Messages </option>
+						<option value="PERSONS"> People </option>
+						<option value="MERCHANTS"> Merchants </option>
+						<option value="TERMS"> Terminology </option>
+						<option value="EVENTS"> Events </option>
+						<option value="LINKS"> Links </option>
+						<option value="IMAGES"> Images </option>
+				</select><br>
+				<input class="inputTextBox" type="text" size="14" maxlength="100" name="SearchString" value="">&nbsp; 
+				<input type="image" src="images/arrow_button.gif" border=0 value="Go" name="Go">
+			</td>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+        </tr>
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+
+        </table>
+        <!-- end inner table -->
+        </td>
+</tr>
+</table>
+<!-- end outer table for 1 pixel border -->
+</form>
+
+		<br>
+		
+		<!-- begin table for 1 pixel border -->
+<table width="180" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+<tr>
+    <td valign="top">
+        <!-- begin inner table for map layout -->
+        <table bgcolor="#F4F4DA" width="178" border="0" cellspacing="0" cellpadding="0">
+        
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+		
+        <tr>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+            <td valign="top">
+            
+				<table bgcolor="#999966" cellspacing="0" cellpadding="1" border="0">
+				<tr>
+					<td>
+				    <table bgcolor="#E7E6C1" cellspacing="0" cellpadding="6" border="0">
+				    <tr>
+					    <td NOWRAP align="right" class="boxHeadingTextBold">shop</td>
+				    </tr>
+				    </table>
+					</td>
+				</tr>
+				</table>
+				<br>
+            <span class="microText">
+
+	<a href="http://www.amazon.com/exec/obidos/redirect?tag=japanesegardenda&linkcode=as2&path=ASIN/4766109732/" target="_blank" alt="Buy it from Amazon"><img src="http://images.amazon.com/images/P/4766109732 .01.MZZZZZZZ.jpg" border="0" alt="Buy it from Amazon"></a><br>Hedges and Ground Cover for Your Garden<br><i>Suzuki Osamu and Aizeki Yoshio</i><br>[<a href="bibliography.asp?ID=556">JGarden Bibliography</a>]		
+		</span>
+			</td>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+        </tr>
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+
+        </table>
+        <!-- end inner table -->
+        </td>
+</tr>
+</table>
+<!-- end outer table for 1 pixel border -->
+
+		<br>
+		
+		<!-- begin table for 1 pixel border -->
+<table width="180" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+<tr>
+    <td valign="top">
+        <!-- begin inner table for map layout -->
+        <table bgcolor="#F4F4DA" width="178" border="0" cellspacing="0" cellpadding="0">
+        
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+		
+        <tr>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+            <td valign="top">
+            
+				<table bgcolor="#999966" cellspacing="0" cellpadding="1" border="0">
+				<tr>
+					<td>
+				    <table bgcolor="#E7E6C1" cellspacing="0" cellpadding="6" border="0">
+				    <tr>
+					    <td NOWRAP align="right" class="boxHeadingTextBold">browse</td>
+				    </tr>
+				    </table>
+					</td>
+				</tr>
+				</table>
+				<br>
+				<span class="smallText">
+	<a href="gardens.asp">gardens</a><br>
+	<a href="tools.asp">tools</a><br>
+	<a href="articles_jojg.asp">JOJG articles</a>&nbsp;<img src="images/icon_new.gif" alt="New Section" border="0"><br>
+	<a href="articles.asp">web articles</a><br>
+	<a href="features.asp">features archive</a><br>
+	<a href="plants.asp">plants</a><br>
+	<a href="bibliography.asp">books, etc.</a><br>
+	<a href="designers.asp">designers</a><br>
+	<a href="merchants.asp">suppliers</a><br>
+	<a href="organizations.asp">organizations</a><br>
+	<a href="biographies.asp">biographies</a><br>
+	<a href="glossary.asp">glossary</a><br>
+	<a href="timeline.asp">timeline</a><br>
+	<a href="links.asp">links</a><br>
+				</span>
+
+			</td>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+        </tr>
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+
+        </table>
+        <!-- end inner table -->
+        </td>
+</tr>
+</table>
+<!-- end outer table for 1 pixel border -->
+
+		<br>
+		
+		
+<form name="frmNewsletter" method="GET" action="member_register.asp">
+<!-- begin table for 1 pixel border -->
+<table width="180" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+<tr>
+    <td valign="top">
+        <!-- begin inner table for map layout -->
+        <table bgcolor="#F4F4DA" width="178" border="0" cellspacing="0" cellpadding="0">
+        
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+		
+        <tr>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+            <td valign="top">
+            
+				<table bgcolor="#999966" cellspacing="0" cellpadding="1" border="0">
+				<tr>
+					<td>
+				    <table bgcolor="#E7E6C1" cellspacing="0" cellpadding="6" border="0">
+				    <tr>
+					    <td NOWRAP align="right" class="boxHeadingTextBold">jgarden news</td>
+				    </tr>
+				    </table>
+					</td>
+				</tr>
+				</table>
+				<br>
+				<span class="descText">Keep up with JGarden changes and news!<br><br>
+				Subscribe to our monthly newsletter:</span><br>
+				<input class="inputTextBox" type="text" name="member_email" value="E-mail Address" maxLength="100" size="14" onclick="javascript:this.value=''">
+				<input type="image" src="images/arrow_button.gif" border=0 value="Go" name="Go">
+			</td>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+        </tr>
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+
+        </table>
+        <!-- end inner table -->
+        </td>
+</tr>
+</table>
+<!-- end outer table for 1 pixel border -->
+</form>
+
+		<br>
+		
+	</td>
+	<td align="left" vAlign="top" bgColor="#FFFFFF" width="*">
+
+<!-- NAV BAR -->
+
+	<!-- begin table for 1 pixel border -->
+	<table width="100%" border="0" cellspacing="0" cellpadding="1">
+	<tr>
+	    <td valign="top">
+	        <!-- begin inner table for map layout -->
+
+
+
+					<!-- GARDENS -->
+					<a href="gardens.asp"><img 
+						src="images/heading_gardens.gif" border="0" width="136" height="28" alt="gardens" id="gardens_on" name="gardens_on"></a>	
+
+					<!-- TOOLS -->
+					<a href="tools.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('tools_off','','images/heading_tools.gif',1)"><img 
+						src="images/heading_tools_white.gif" border="0" width="112" height="28" alt="tools" id="tools_off" name="tools_off"></a> 
+
+					<!-- RESOURCES  -->
+					<a href="resources.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('resources_off','','images/heading_resources.gif',1)"><img 
+							src="images/heading_resources_white.gif" border="0" width="136" height="28" alt="resources" id="resources_off" name="resources_off"></a> 
+					
+					
+				
+	        <!-- end inner table -->
+	        </td>
+	</tr>
+	</table>
+	<!-- end outer table for 1 pixel border -->
+<!-- END NAV BAR -->
+
+	<br>
+	<img src="images/tab_info_on.gif" border="0" alt=""><a href="gardens.asp?TAB=events&ID=306"><img src="images/tab_events_off.gif" border="0" alt="Click to see events"></a>
+<br>
+		
+		
+		<span class="titleText"><i>Anderson Gardens</i></span>
+		
+		
+		<!-- begin table for 1 pixel border -->
+		<table width="690" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+		<tr>
+		    <td valign="top">
+		        <!-- begin inner table -->
+		        <table bgcolor="#FFFFFF" width="688" border="0" cellspacing="0" cellpadding="0">
+		        
+				<tr>
+					<td colspan="3"><img src="images/spacer.gif" width="1" height="6" border="0"></td>
+				</tr>
+				
+		        <tr>
+					<td width="10"><img src="images/spacer.gif" width="6" height="1" border="0"></td>
+		            <td valign="top">
+            
+				<span class="smallText"><table width="100%" cellpadding="2" cellspacing="1" border="0" bgColor="#FFFFFF"><tr><td bgcolor="#DDDDDD" align="left"><b>URL:</b></td><td bgColor=#FFFFFF align="left" colspan="2"><a href="http://www.andersongardens.org/" target="_blank"><img src="images/icon_goto_url.gif" border="0" alt="Goto this web site">&nbsp;&nbsp;http://www.andersongardens.org/&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top" width="100"><b>Name:</b></td><td WIDTH=360 bgColor=#FFFFFF align="left"><b>Anderson Gardens</b>&nbsp;</td><td rowspan="20" align="center" valign="top"><span class="microText">
+				  <br><br>
+				  <input type="button" class="buttonGardens" value="Show/Hide Map Navigation" onclick="ShowHideNavigation()">
+				  <div id='stMap' style="position:relative; width:300px; height:240px; border: 1 solid #CCCCCC"></div>
+				  <br><br>
+				  <div id='ovMap' style="position:relative; width:300px; height:240px; border: 1 solid #CCCCCC"></div>
+
+				  <script language="javascript">
+					  jgLat = 42.288605;
+					  jgLong = -89.063467;
+					  jgName = 'Anderson Gardens';
+					  jgText = 'Rockford, Illinois, UNITED STATES';
+				  </script>
+			  &nbsp;</span></td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Alternate Name:</b></td><td bgColor=#FFFFFF align="left"><b></b>&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Address:</b></td><td bgColor=#FFFFFF align="left">318 Spring Creek Road&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Mailing Address:</b></td><td bgColor=#FFFFFF align="left">340 Spring Creek Road&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>City:</b></td><td bgColor=#FFFFFF align="left">Rockford&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>State:</b></td><td bgColor=#FFFFFF align="left">Illinois&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Postal Code:</b></td><td bgColor=#FFFFFF align="left">61107-1035&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Country:</b></td><td bgColor=#FFFFFF align="left">UNITED STATES&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Latitude/Longitude:</b></td><td bgColor=#FFFFFF align="left">lat=42.288605; long=-89.063467<br><a href="search_lat_long.asp?RADIUS=100&LAT=42.288605&LONG=-89.063467">Find Gardens Nearby</a></td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Weather:</b></td><td bgColor=#FFFFFF align="left"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=61107-1035" target="_blank"><img src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=mapblast&zip=61107-1035" border="0" alt="current weather"></a>&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Phone:</b></td><td bgColor=#FFFFFF align="left">+1.815.229.9390&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Fax:</b></td><td bgColor=#FFFFFF align="left">+1.815.229.9391&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>E-Mail:</b></td><td bgColor=#FFFFFF align="left"><a href=mailto:></a>&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Contact:</b></td><td bgColor=#FFFFFF align="left">&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Designer(s):</b></td><td bgColor=#FFFFFF align="left">Hoichi Kurisu&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Contruction Date:</b></td><td bgColor=#FFFFFF align="left">1978&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Public/Private:</b></td><td bgColor=#FFFFFF align="left">PUBLIC&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Hours:</b></td><td bgColor=#FFFFFF align="left">May-October, Mon-Fri 10am - 5pm, Sat 10am - 4pm, Sun Noon-4pm including Memorial Day, Labor Day and Independence Day<BR>Closed Nov-April&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Admission:</b></td><td bgColor=#FFFFFF align="left">Adults $5, Students $3, Seniors $4, children 4 and under are free&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Added to JGarden:</b></td><td bgColor=#FFFFFF colspan="2" align="left">1/1/1999&nbsp;</td></tr><tr><td bgcolor="#DDDDDD" align="left" valign="top"><b>Last Updated:</b></td><td bgColor=#FFFFFF colspan="2" align="left">7/27/2001&nbsp;</td></tr><tr valign="top"><td bgcolor="#DDDDDD" align="left" valign="top"><b>JGarden Description:</b></td><td bgColor=#FFFFFF colspan="2" align="left">The inspiration for Anderson Gardens began in 1966 during John Anderson's first trip to Japan. There he met a family friend, Mr. Akira Ohno, President of Morinaga Milk Industries of Tokyo, who gave him an in-depth look at the Japanese people and their culture. When the land was acquired for a new home site, John and Linda Anderson realized that the property had the potential to be an excellent setting for a Japanese garden. With the Andersons' strong interest in Japanese culture, they decided to start development of a Japanese-style garden.<BR><BR>
+Construction of the Anderson Gardens began in 1978. The gardens have been designed and built by <A HREF="designers.asp?ID=65">Hoichi Kurisu</A>. Mr. Kurisu came to the United States in 1968 accepting the position of Director of Landscaping at the Japanese garden complex in Washington Park Gardens, Portland, Oregon. He had graduated from Tokyo's Waseda University and spent several years studying under Mr. Kenzo Ogata, one of Japan's most renowned landscape designers. Mr. Kurisu has his own landscape design and construction firm in Portland.  The garden was recently donated to an area non-profit to be managed.<BR><BR>
+This pond and stroll garden is renowned for its stonework, hidden water features and exceptional carpentry. The sukiya-style <I>machiai</I, built by master carpenter Masahiro Hamada in Tokyo and shipped and assembled in Illinoisis, is particularly notable.  A new 'Reflection Garden' is scheduled to be opened in spring 2001.  A gift shop is also available on the site.&nbsp;</td></tr></table><br>
+			<!--- END CONTENT --->
+
+
+			<br>
+				</span>
+					</td>
+					<td width="10"><img src="images/spacer.gif" width="6" height="1" border="0"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><img src="images/spacer.gif" width="1" height="6" border="0"></td>
+				</tr>
+
+				</table>
+				<!-- end inner table -->
+		      </td>
+		</tr>
+		</table>
+		<!-- end outer table for 1 pixel border -->
+		
+		<br><br>
+		
+		
+			<p align="center">
+			
+<!-- begin outer table for 1 pixel border -->
+<table width="280" border="0" cellspacing="0" cellpadding="1" bgcolor="#999966">
+<tr>
+    <td valign="top">
+        <!-- begin inner table for map layout -->
+        <table bgcolor="#E1E1E1" width="278" border="0" cellspacing="0" cellpadding="0">
+        
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+		
+        <tr>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+            <td valign="top" align="center">
+            <span class="smallText">
+	<I>Sunlight sparkles on the dancing water<BR>
+Spring warms the garden wall<BR>
+Plum buds smile like red lips,<BR>
+But the gate-willow has not yet<BR>
+Grown her eyebrows.<BR></I><BR>&nbsp;&nbsp;<B>Otsu Renju</B><BR>&nbsp;&nbsp;<B><I>Kaifus&ocirc;</I></B><BR>
+			</span>
+			</td>
+			<td width="10"><img src="images/spacer.gif" width="10" height="1" border="0"></td>
+        </tr>
+		<tr>
+			<td colspan="3"><img src="images/spacer.gif" width="1" height="10" border="0"></td>
+		</tr>
+
+        </table>
+        <!-- end inner table -->
+        </td>
+</tr>
+</table>
+<!-- end outer table for 1 pixel border -->
+
+			</p>
+		
+		
+	</td>
+</tr>
+
+
+<tr>
+	<td align="center" vAlign="top" bgColor="#FFFFFF" colspan="2"
+
+
+
+<!-- Start Footer -->
+	<form name="frmFooterSearch" method="POST" action="search.asp">
+	<center><span class="microText"><font size="1">&copy;1996-2002, Robert Cheetham; &copy;2021 Japanese Garden Research Network, Inc.</font></span><br>
+
+	<map name=map_nav_footer>
+	  <area shape="RECT" coords="10,0,82,20" href="contact.asp" alt="Contact Us"> 
+	  <area shape="RECT" coords="82,0,136,20" href="site_index.asp" alt="Site Index">
+	  <area shape="RECT" coords="138,0,180,20" href="privacy.asp" alt="Privacy Policy">
+	</map>
+
+	<table border="0" cellPadding="0" cellSpacing="0" width="100%" bgColor="#000000">
+		<tr>
+		<td bgColor="#999999" align="left"><img border="0" src="images/nav_footer.gif" useMap="#map_nav_footer" width="247" height="20"> 
+			<select name="CAT" size="1" class="inputTextBox">
+				<option value="" selectED> --Entire Site-- </option>
+				<option value="GARDENS"> Gardens </option>
+				<option value="PLANTS"> Plants </option>
+				<option value="REFERENCES"> Bibliography </option>
+				<option value="FEATURES"> Features </option>
+				<option value="FEATURES"> Announcements </option>
+				<option value="FORUM"> Forum Messages </option>
+				<option value="PERSONS"> People </option>
+				<option value="MERCHANTS"> Merchants </option>
+				<option value="TERMS"> Terminology </option>
+				<option value="EVENTS"> Events </option>
+				<option value="LINKS"> Links </option>
+				<option value="IMAGES"> Images </option>
+			</select>
+			<input type="text" size="16" maxlength="56" name="SearchString" value="" class="inputTextBox">&nbsp;&nbsp; 
+			<input type="image" SRC="images/arrow_button.gif" border="0" value="Go" name="Search" alt="Search">
+		</td>
+		</tr>
+	</table>
+	</form>
+
+<!-- End Footer --> 
+
+
+
+	</td>
+</tr>
+</table>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-973194-1";
+urchinTracker();
+</script>
+
+</body>
+</html>
